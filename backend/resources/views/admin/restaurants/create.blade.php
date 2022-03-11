@@ -92,6 +92,6 @@
 
         </form>
 
-        <a href="{{route('restaurants.index')}}"><button type="button" class="btn btn-dark">Restaurants list</button></a>
+        <a href="{{route('restaurants.index')}}"><button type="button" class="btn btn-dark">Restaurants dashboard</button></a>
     </div>
 @endsection
