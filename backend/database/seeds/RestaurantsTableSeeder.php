@@ -130,6 +130,7 @@ class RestaurantsTableSeeder extends Seeder
             $newRestaurant->post_code = '00100';
             $newRestaurant->phone = '06'.rand(1000,9999).rand(1000,9999);
             $newRestaurant->save();
+            
         }
 
     }
