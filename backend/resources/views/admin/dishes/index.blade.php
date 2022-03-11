@@ -49,6 +49,10 @@
                     </div>
                 </div>
             @endforeach
+
+            <a href="{{route('dishes.create')}}" class="card col-4">
+                crea nuovo piatto
+            </a>
             
         </div>
     </div>

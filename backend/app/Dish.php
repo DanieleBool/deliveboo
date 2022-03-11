@@ -13,4 +13,6 @@ class Dish extends Model
     public function restaurant(){
         return $this->belongsTo('App\Restaurant');
     }
+
+    protected $guarded = ['restaurant_id'];
 }
