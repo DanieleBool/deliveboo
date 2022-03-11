@@ -86,9 +86,9 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dish $dish)
     {
-        //
+        return view("admin.dishes.edit", compact("dish"));
     }
 
     /**
@@ -98,9 +98,20 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Dish $dish)
     {
-        //
+        // validation
+        $request->validate($this->validationRule);
+
+        // add data
+        $data = $request->all();
+
+        $dish->fill($data);
+        $dish->visible = isset($data["visible"]);
+        $dish->save();
+
+        // redirect
+        return redirect()->route("dishes.show", $dish->id);
     }
 
     /**
