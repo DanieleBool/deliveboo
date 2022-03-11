@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Dish;
+use App\Restaurant;
 
 class DishController extends Controller
 {
@@ -14,7 +16,13 @@ class DishController extends Controller
      */
     public function index()
     {
-        //
+        $restaurants = Restaurant::select('id')->where('user_id', Auth::id())->get();
+        $restaurants_id = [];
+        foreach ($restaurants as $restaurant) {
+            $restaurants_id[] = $restaurant->id;
+        }
+        $dishes = Dish::whereIn('restaurant_id', $restaurants_id)->get();
+        return view("admin.dishes.index", compact("dishes"));
     }
 
     /**
@@ -44,7 +52,7 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Dish $dish)
     {
         //
     }
