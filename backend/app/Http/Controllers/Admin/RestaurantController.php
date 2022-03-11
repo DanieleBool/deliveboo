@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use App\Restaurant;
 
 class RestaurantController extends Controller
@@ -16,7 +17,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        $restaurant = Restaurant::where('user_id', Auth::id())->first();
+        return view('admin.restaurants.index',compact('restaurant'));
     }
 
     /**
