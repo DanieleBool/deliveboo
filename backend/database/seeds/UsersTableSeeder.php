@@ -13,9 +13,9 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $names = ['Giovanni','Marco','Giorgio','Roberto', 'Anais','Samuele','Lorenzo','Claudio','Jimmy','Anna'];
+        $names = ['Giovanni','Marco','Giorgio','Roberto', 'Anais','Samuele','Lorenzo','Claudio','Jimmy','Anna','Alex','Leonardo','Gianluca','Daniele','Nicholas','Cristina'];
 
-        $surnames = ['Argentiero','Cusenza','Monne','Di Ambrosio', 'Di Genoa','Madrigali','Torelli', 'Di Caprio','Hu','Bigatti'];
+        $surnames = ['Argentiero','Cusenza','Monne','Di Ambrosio', 'Di Genoa','Madrigali','Torelli', 'Di Caprio','Hu','Bigatti','De Rosa', 'Selmini','Benassi','Di Elauterio','Romiti','Galfo'];
 
         $password = Hash::make('test1234!');
 
