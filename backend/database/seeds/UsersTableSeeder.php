@@ -22,6 +22,7 @@ class UsersTableSeeder extends Seeder
 
 
         for($i = 0; $i < count($names); $i++){
+
             $newUser = new User;
             $newUser->name = $names[$i];
             $newUser->surname = $surnames[$i];
