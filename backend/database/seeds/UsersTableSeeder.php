@@ -25,6 +25,7 @@ class UsersTableSeeder extends Seeder
             $newUser = new User;
             $newUser->name = $names[$i];
             $newUser->surname = $surnames[$i];
+            // questa str_replace rimpiazza tutti is spazi vuoti nella mail e str lower transforma il testo in lowercase
             $newUser->email = str_replace(' ', '',strtolower(($names[$i].$surnames[$i].'@gmail.com'))) ;
             $newUser->password = $password;
             $newUser->vat =strval(rand(10000, 99999).rand(100000, 999999));
