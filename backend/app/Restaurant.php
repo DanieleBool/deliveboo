@@ -18,4 +18,6 @@ class Restaurant extends Model
     public function dishes(){
         return $this->hasMany('App\Dish');
     }
+
+    protected $guarded = ['slug','user_id'];
 }
