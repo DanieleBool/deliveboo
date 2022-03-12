@@ -32,8 +32,11 @@
 
                         <div  class="d-flex justify-content-end">
 
+                            {{-- dishes list button --}}
+                            <a href="{{route('dishes.index')}}"><button type="button" class="btn btn-primary">Lista piatti</button></a>
+
                             {{-- edit button --}}
-                            <a href="{{ route('restaurants.edit', $restaurant->id) }}"><button type="button" class="btn btn-warning">Modifica</button></a>
+                            <a href="{{ route('restaurants.edit', $restaurant->id) }}" class="ml-3"><button type="button" class="btn btn-warning">Modifica</button></a>
                             {{-- modal delete button --}}
                             <button type="button" class="btn btn-danger ml-3" data-toggle="modal" data-target="#deleteModal">Elimina</button>
                             
