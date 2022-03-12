@@ -55,6 +55,9 @@
             </a>
             
         </div>
+
+        <a href="{{route("restaurants.index")}}" class="d-block mt-5"><button type="button" class="btn btn-dark">Torna al ristorante</button></a>
+
     </div>
 
 @endsection
