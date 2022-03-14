@@ -51,7 +51,7 @@
                             <li>
                                 <a href="#">
                                     <span>
-                                        <i class="fa fa-bar-chart responsive-i" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-basket-shopping"></i>
                                     </span>
                                 </a>
                             </li>
@@ -59,7 +59,7 @@
                             <li>
                                 <a href="#">
                                     <span>
-                                        <i class="fa fa-cart-plus responsive-i" aria-hidden="true"></i>
+                                        <i class="fa fa-bar-chart responsive-i" aria-hidden="true"></i>
                                     </span>
                                 </a>
                             </li>

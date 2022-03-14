@@ -20228,6 +20228,10 @@ header nav #dropdown li {
   list-style: none;
 }
 
+header nav #dropdown li i {
+  color: #00CCBC;
+}
+
 main {
   background-color: #F9FAFA;
 }
