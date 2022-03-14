@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-
+use App\Restaurant;
+use App\Order;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,7 +16,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        $restaurants_id = $restaurant->id;
+        $orders = Order::where('restaurant_id', $restaurants_id)->with('dishes')->get();
+        return view("admin.orders.index", compact("orders"));
     }
 
     /**
@@ -67,9 +72,11 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Order $order)
     {
-        //
+        $order->accepted = true;
+        $order->save();
+        return redirect()->route("orders.index");
     }
 
     /**
@@ -78,8 +85,11 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Order $order)
     {
-        //
+
+        $order->delete();
+
+        return redirect()->route('orders.index');
     }
 }
