@@ -20,6 +20,7 @@ Route::prefix("admin")->namespace("Admin")->middleware("auth")->group(function()
      Route::get('/', 'RestaurantController@index')->name('home');
      Route::resource('restaurants', 'RestaurantController');
      Route::resource('dishes', 'DishController');
+     Route::resource('orders', 'OrderController');
 });
 
 
