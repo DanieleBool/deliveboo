@@ -7,7 +7,7 @@
         <h1 class="text-center mb-3">Lista piatti</h1>
 
         <div class="row">
-
+            
             @foreach ($dishes as $dish)
                 <div class="card col-4">
                     {{-- <img src="..." class="card-img-top" alt="..."> --}}
@@ -24,7 +24,7 @@
 
                         {{-- modal delete button --}}
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$dish->id}}">Elimina</button>
-                        
+
                         {{-- modal --}}
                         <div class="modal fade" id="deleteModal-{{$dish->id}}" tabindex="-1">
                             <div class="modal-dialog">
@@ -53,7 +53,7 @@
             <a href="{{route('dishes.create')}}" class="card col-4">
                 crea nuovo piatto
             </a>
-            
+
         </div>
 
         <a href="{{route("restaurants.index")}}" class="d-block mt-5"><button type="button" class="btn btn-dark">Torna al ristorante</button></a>

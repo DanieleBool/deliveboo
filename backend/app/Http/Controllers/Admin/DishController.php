@@ -77,7 +77,14 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        return view("admin.dishes.show", compact("dish"));
+        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        $restaurants_id = $restaurant->id;
+
+        if($dish->restaurant_id === $restaurants_id){
+            return view("admin.dishes.show", compact("dish"));
+        }else{
+            return redirect()->route("dishes.index");
+        }
     }
 
     /**
@@ -88,7 +95,15 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        return view("admin.dishes.edit", compact("dish"));
+        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        $restaurants_id = $restaurant->id;
+
+        if($dish->restaurant_id === $restaurants_id){
+            return view("admin.dishes.edit", compact("dish"));
+        }else{
+            return redirect()->route("dishes.index");
+        }
+
     }
 
     /**

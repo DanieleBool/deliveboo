@@ -20,7 +20,7 @@
         <span class="badge badge-success">Accepted</span>
     @else
         <a href="{{ route('orders.update', $order->id) }}"><button type="button" class="btn btn-info">Accetta</button></a>
-          {{-- modal delete button --}}
+        {{-- modal delete button --}}
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$order->id}}">Elimina</button>
 
         {{-- modal --}}
