@@ -72,9 +72,11 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Order $order)
     {
-        //
+        $order->accepted = true;
+        $order->save();
+        return redirect()->route("orders.index");
     }
 
     /**
@@ -83,8 +85,11 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Order $order)
     {
-        //
+
+        $order->delete();
+
+        return redirect()->route('orders.index');
     }
 }
